@@ -45,10 +45,10 @@ def match_job(name, disability_type, disability_degree):
 # Streamlit UI 구현
 st.title('ABLEMATCH')
 
-user_type = st.selectbox('사용자 유형을 선택하세요', ['기업', '지원자'])
+user_type = st.selectbox('사용자 유형을 선택하세요', ['회사', '지원자'])
 
-if user_type == '기업':
-    company = st.text_input('기업명')
+if user_type == '회사':
+    company = st.text_input('회사명')
     job_name = st.text_input('업무이름')
     abilities = st.multiselect('요구 능력 선택', db1['능력'].unique())
     if st.button('일자리 등록'):
