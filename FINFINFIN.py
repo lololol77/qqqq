@@ -43,12 +43,12 @@ def match_job(name, disability_type, disability_degree):
     return matching_results
 
 # Streamlit UI 구현
-st.title('장애인 일자리 매칭 시스템')
+st.title('ABLEMATCH')
 
-user_type = st.selectbox('사용자 유형을 선택하세요', ['회사', '지원자'])
+user_type = st.selectbox('사용자 유형을 선택하세요', ['기업', '지원자'])
 
-if user_type == '회사':
-    company = st.text_input('회사명')
+if user_type == '기업':
+    company = st.text_input('기업명')
     job_name = st.text_input('업무이름')
     abilities = st.multiselect('요구 능력 선택', db1['능력'].unique())
     if st.button('일자리 등록'):
@@ -61,10 +61,10 @@ elif user_type == '지원자':
     if st.button('매칭 결과 확인'):
         results = match_job(name, disability_type, disability_degree)
         for company, job_name, score in results:
-            st.write(f'회사: {company}, 업무: {job_name}, 적합도 점수: {score}')
+            st.write(f'기업: {company}, 업무: {job_name}, 적합도 점수: {score}')
 
 # 유료 서비스 확인
-if st.button('추가 질문'):
+if st.button('유료서비스'):
     if user_type == '회사':
         st.radio('유료 직무개발 서비스 이용하시겠습니까?', ['예', '아니오'])
     elif user_type == '지원자':
