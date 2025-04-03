@@ -64,7 +64,7 @@ elif user_type == '지원자':
             st.write(f'기업: {company}, 업무: {job_name}, 적합도 점수: {score}')
 
 # 유료 서비스 확인
-if st.button('유료서비스'):
+if st.button('유료 서비스'):
     if user_type == '회사':
         st.radio('유료 직무개발 서비스 이용하시겠습니까?', ['예', '아니오'])
     elif user_type == '지원자':
