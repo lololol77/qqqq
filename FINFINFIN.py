@@ -3,7 +3,7 @@ import streamlit as st
 import sqlite3
 
 # SQLite 데이터베이스 경로
-db_path = 'abilities_complete_corrected.sqlite'
+db_path = 'abilities_corrected.final_v4.sqlite'
 
 # DB1 초기화 (SQLite 사용)
 def load_db1():
